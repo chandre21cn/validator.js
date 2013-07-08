@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0;" name="viewport" />
+	<title>Html5 Validator</title>
+</head>
+<body>
+<form action="" id="validatForm" novalidate>
+    <div class="ui-field"><input type="text" name="req" /></div>
+    <div class="ui-field"><input type="text" name="alphanumeric" /></div>
+    <div class="ui-field"><input type="password" name="password_confirm" /></div>
+    <div class="ui-field"><input type="email" name="valid_email" /></div>
+    <div class="ui-field"><input type="text" name="minlength" /></div>
+    <div class="ui-field">
+        <input type="checkbox" name="tos_checkbox" />
+        <input type="checkbox" name="tos_checkbox" />
+        <input type="checkbox" name="tos_checkbox" />
+    </div>
+    <div class="ui-field"><input id="postcode" name="postcode" type="number" min="1001" max="8000" maxlength="4" required /></div>
+    <div class="ui-field"><input id="postcode" name="postcode" type="number" required /></div>
+    <div class="ui-field"><input type="tel" id="tel" name="tel" pattern="d{10}" placeholder="Please enter a ten digit phone number" required /></div>
+    <div class="ui-field">
+      <label for=""><input type="checkbox" name="num_checkbox" value="1" />1</label>
+      <label for=""><input type="checkbox" name="num_checkbox" value="2" />2</label>
+      <label for=""><input type="checkbox" name="num_checkbox" value="3" />3</label>
+    </div>
+    <div class="ui-field">
+      <label><input type="radio" name="num_radio" value="1" />1</label>
+      <label><input type="radio" name="num_radio" value="2" />2</label>
+      <label><input type="radio" name="num_radio" value="3" />3</label>
+    </div>
+    <div class="ui-field"><input type="password" /></div>
+    <div class="ui-field">
+        <select id="fieldSelect1">
+            <option value="选项1">选项1</option>
+            <option value="选项2">选项2</option>
+            <option value="选项3">选项3</option>
+        </select>
+    </div>
+    <div class="ui-field">
+        <select id="fieldSelect2" multiple="multiple">
+            <option value="选项1">选项1</option>
+            <option value="选项2">选项2</option>
+            <option value="选项3">选项3</option>
+        </select>
+    </div>
+    <div class="ui-field">
+        <textarea>
+        </textarea>
+    </div>
+    <div class="ui-field"><input type="file" /></div>
+    <div class="ui-field"><input type="search" /></div>
+    <div class="ui-field"><input type="email" /></div>
+    <div class="ui-field"><input type="color" /></div>
+    <div class="ui-field"><input type="url" /></div>
+    <div class="ui-field"><input type="number" min="0" max="10" step="2" value="6" /></div>
+    <div class="ui-field"><input type="range" min="0" max="10" step="2" value="6" /></div>
+    <div class="ui-field">date:<input type="date" /></div>
+    <div class="ui-field">datetime:<input type="datetime" /></div>
+    <div class="ui-field">datetime-local:<input type="datetime-local" /></div>
+    <div class="ui-field">month:<input type="month" /></div>
+    <div class="ui-field">week:<input type="week" /></div>
+    <div class="ui-field">time:<input type="time" /></div>
+    <div class="ui-field"><input type="submit" /></div>
+</form>
+</body>
+</html>

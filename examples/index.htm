@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0;" name="viewport" />
+	<title>Html5 Validator</title>
+  <link rel="stylesheet" href="http://handyjs.github.io/base-ui/static/css/base-ui.css" />
+</head>
+<body>
+<form action="" id="validatForm" novalidate>
+  <div class="ui-field ui-field-pack">
+      <div class="ui-flexbox">
+        <div class="ui-flexbox-item ui-field-item ui-field-item-reset">
+          <div class="ui-field-input">
+            <input type="text" name="firstName" placeholder="姓" data-display="姓" required data-rule="name" data-errormessage-name="" />
+          </div>
+        </div>
+        <div class="ui-flexbox-item ui-field-item ui-field-item-reset">
+          <div class="ui-field-input">
+            <input type="text" name="secondName" placeholder="名" data-display="名" required data-rule="name" />
+          </div>
+        </div>
+      </div>
+      <div class="ui-field-message"></div>
+  </div>
+  <div class="ui-field">
+      <div class="ui-field-input">
+          <input type="tel" name="tel" placeholder="电话" value="" required data-display="电话" />
+      </div>
+      <div class="ui-field-message">提示信息</div>
+  </div>
+  <div class="ui-flexbox ui-captcha">
+    <div class="ui-field ui-flexbox-item">
+      <div class="ui-field-input">
+          <input type="text" name="captcha" data-display="短信验证码" required pattern="/d{4}" maxlength="4" minlength="4" placeholder="短信验证码">
+      </div>
+    </div>
+    <div class="ui-captcha-button">
+      <button type="button" class="ui-button ui-button-submit">重获验证码</button>
+    </div>
+  </div>
+  <div class="ui-field">
+    <button class="ui-button ui-button-submit" type="submit">确定</button>
+  </div>
+</form>
+
+<script type="text/javascript" src="../src/validator.js"></script>
+<script type="text/javascript">
+var validator = new Validator('validatForm', {
+  stopOnError: false,
+  autoSubmit: false
+});
+validator.addRule('name', /^[A-Z]+$/, '{{display}}只能由中文汉字或大写英文字母构成。');
+</script>
+<script type="text/javascript">
+window.addEventListener('load', function () {
+  var interval = 500, begin = Date.now(), img = new Image(), timer = setTimeout(handler, interval);
+  window.removeEventListener('load', arguments.callee);
+  img.addEventListener('load', handler, false);
+  img.src = 'https://i.alipayobjects.com/e/201305/Q9jNoeIir.gif?t=' + begin;
+ 
+  function handler() {
+    clearTimeout(timer);
+    img.removeEventListener('load', handler);
+    //响应在500ms以内算高速网络 高清（HD）标清（SD）
+    document.body.className = (document.body.className + (Date.now() - begin < interval ? ' ui-hd' : ' ui-sd')).trim();
+  }
+}, false);
+</script>
+</body>
+</html>
+
